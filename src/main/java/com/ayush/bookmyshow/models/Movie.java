@@ -15,7 +15,7 @@ public class Movie extends BaseModel {
     @ElementCollection
     @Enumerated(EnumType.ORDINAL)
     private List<Features> requiredFeatures;
-    @OneToMany
+    @OneToMany(mappedBy = "movie")
     private List<Actor> actors;
     private int duration;
 }
