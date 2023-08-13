@@ -11,12 +11,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class SeatTypeInShow extends BaseModel{
-    @Enumerated(EnumType.ORDINAL)
-    private SeatType seatType;
+public class Seat extends BaseModel{
+    private String seatNumber;
 
     @ManyToOne
-    private Show show;
-
-    private String price;
+    private Auditorium audi;
+    @Enumerated(EnumType.ORDINAL)
+    private SeatType seatType;
+    private int rowNumber;
+    private int colNumber;
 }
