@@ -10,10 +10,10 @@ import lombok.Setter;
 @Entity
 public class SeatInShow extends BaseModel{
 
-    @OneToOne
-    private Seat seat;
-    @OneToOne
-    private Show show;
+//    @OneToOne
+//    private Seat seat;
+//    @OneToOne
+//    private Show show;
     @Enumerated(EnumType.ORDINAL)
     private SeatStatus seatStatus;
 }

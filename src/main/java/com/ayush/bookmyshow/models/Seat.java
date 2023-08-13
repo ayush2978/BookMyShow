@@ -16,6 +16,7 @@ public class Seat extends BaseModel{
 
     @ManyToOne
     private Auditorium audi;
+
     @Enumerated(EnumType.ORDINAL)
     private SeatType seatType;
     private int rowNumber;
