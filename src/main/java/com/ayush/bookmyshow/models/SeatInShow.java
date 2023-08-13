@@ -1,9 +1,7 @@
 package com.ayush.bookmyshow.models;
 
 import com.ayush.bookmyshow.models.enums.SeatStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,8 +10,10 @@ import lombok.Setter;
 @Entity
 public class SeatInShow extends BaseModel{
 
-//    private Seat seat;
-//    private Show show;
+    @OneToOne
+    private Seat seat;
+    @OneToOne
+    private Show show;
     @Enumerated(EnumType.ORDINAL)
     private SeatStatus seatStatus;
 }
