@@ -1,6 +1,7 @@
 package com.ayush.bookmyshow.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,11 @@ import java.util.List;
 @Entity
 public class Theatre extends BaseModel{
     private String theatreName;
-    @OneToMany
+    private String address;
+
+    @ManyToOne
+    private City city;
+
+    @OneToMany(mappedBy = "theatre")
     private List<Auditorium> auditoriums;
 }

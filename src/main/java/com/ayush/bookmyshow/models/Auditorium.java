@@ -11,9 +11,12 @@ import java.util.List;
 @Setter
 @Entity
 public class Auditorium extends BaseModel{
-    private String name;
+    private String number;
     private int maxRows;
     private int maxCols;
+
+    @ManyToOne
+    private Theatre theatre;
 
     @ElementCollection
     @Enumerated(EnumType.ORDINAL)
